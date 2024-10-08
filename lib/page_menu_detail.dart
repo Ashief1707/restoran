@@ -51,7 +51,7 @@ class DetailMenu extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 23,
+                        fontSize: 21,
                         )
                       ),
                       ButtonFavorite(),
@@ -81,7 +81,7 @@ class DetailMenu extends StatelessWidget {
               Container(
                 child: Text("Apa kata orang-orang", 
                 style: TextStyle(
-                  fontSize : 21,
+                  fontSize : 20,
                   fontWeight: FontWeight.bold,
                 ))
               ),
@@ -115,7 +115,12 @@ class DetailMenu extends StatelessWidget {
                                 children: [
                                   RateUlasan(Icons.star, menu.rate, Colors.orange),
                                   SizedBox(width: 3),
-                                  Text("/"),
+                                  Text(
+                                    "•",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                    ),
+                                  ),
                                   SizedBox(width: 3),
                                   Text(menu.ulasan[index].values.first)
                                 ],
@@ -181,7 +186,7 @@ class DetailMenu extends StatelessWidget {
                     Text(
                       teks,
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold
                       ),
                     ),
