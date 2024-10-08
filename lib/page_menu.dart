@@ -21,16 +21,9 @@ class ListItem extends StatelessWidget {
         margin: EdgeInsets.all(3),
         height: 80,
         padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-        
         decoration: const BoxDecoration(
           color: bglistmenu,
           borderRadius:BorderRadius.all(Radius.circular(10)),
-          // boxShadow: [BoxShadow(
-          //   color:  Colors.red,
-          //   offset: Offset(1, 2),
-          //   blurRadius: 6
-          //   ),
-          // ]
           ),
         child: Row(
           children: [
@@ -39,7 +32,7 @@ class ListItem extends StatelessWidget {
             deskripsiMenu(),
             Icon(
               Icons.food_bank,
-              color: iconColor,
+              color: iconfoodColor,
               size: 29,
             )
           ],
@@ -79,13 +72,14 @@ class ListItem extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.star,
-                    size: 17
+                    size: 17,
+                    color: Colors.orange
                     ),
                   SizedBox(width: 3),
                   Text(
                     menu.rate,
                     style: TextStyle(
-                      fontSize: 15
+                      fontSize: 14
                     ),
                     ),
                 ],
@@ -94,6 +88,7 @@ class ListItem extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.monetization_on,
+                    color: Colors.green,
                     size: 17
                     ),
                    SizedBox(width: 3),

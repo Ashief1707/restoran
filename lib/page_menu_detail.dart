@@ -60,27 +60,26 @@ class DetailMenu extends StatelessWidget {
               
               Column(
                 children: [
-                  RateKategori(Icons.star, menu.rate),
-                  RateKategori(Icons.restaurant, menu.kategori),
+                  RateKategori(Icons.star, menu.rate, Colors.orange),
+                  RateKategori(Icons.category, menu.kategori, Colors.black),
                   SizedBox(height: 4),
                   StyleHarga(Icons.monetization_on, menu.harga),
                 ],
               ),
-              SizedBox(height: 3),
+              SizedBox(height: 1),
               Container(
                 padding: EdgeInsets.all(8),
                 child: Text(
                   textAlign: TextAlign.left,
                     menu.deskripsi,
                     style: TextStyle(
-                      fontSize:15,
+                      fontSize:16,
                     ),
                 ),
               ),
               SizedBox(height:7),
               Container(
-                alignment: Alignment.center,
-                child: Text("Bahan Racikan", 
+                child: Text("Apa kata orang-orang", 
                 style: TextStyle(
                   fontSize : 21,
                   fontWeight: FontWeight.bold,
@@ -88,13 +87,13 @@ class DetailMenu extends StatelessWidget {
               ),
               SizedBox(height:12),
               SizedBox(
-                height: 100,
+                height: 105,
                 child: ListView.builder(
-                  itemCount: menu.bahan.length,
+                  itemCount: menu.ulasan.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     return Container(
-                      width: 90,
+                      width: 310,
                       padding: EdgeInsets.all(10),
                       margin: EdgeInsets.only(right:10),
                       decoration: 
@@ -103,15 +102,40 @@ class DetailMenu extends StatelessWidget {
                           color: bglistmenu,
                           ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset(menu.bahan[index].values.first, width: 52),
-                          Text(menu.bahan[index].keys.first)
+                          Text(
+                            menu.ulasan[index].values.last,
+                            style: TextStyle(fontSize: 15),
+                          ),
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.bottomLeft,
+                              child: Row(
+                                children: [
+                                  RateUlasan(Icons.star, menu.rate, Colors.orange),
+                                  SizedBox(width: 3),
+                                  Text("/"),
+                                  SizedBox(width: 3),
+                                  Text(menu.ulasan[index].values.first)
+                                ],
+                              ),
+                            ),
+                          ),
                           ],
                       ),
                     );
                   }
                 ),
-              )
+              ),
+              SizedBox(height: 16),
+              Container(
+                child: Text("........", 
+                style: TextStyle(
+                  fontSize : 21,
+                  fontWeight: FontWeight.bold,
+                ))
+              ),
             ],
           ),
           )
@@ -119,10 +143,10 @@ class DetailMenu extends StatelessWidget {
     );
   }
 
-  Row RateKategori(IconData icon, String teks) {
+  Row RateKategori(IconData icon, String teks, color) {
     return Row(
                   children: [
-                    Icon(icon, color: Colors.black, size:17),
+                    Icon(icon, color: color, size:18),
                     SizedBox(width: 5),
                     Text(
                       teks,
@@ -134,15 +158,30 @@ class DetailMenu extends StatelessWidget {
                 );
   }
 
-    Row StyleHarga(IconData icon, String teks) {
+    Row RateUlasan(IconData icon, String teks, color) {
     return Row(
                   children: [
-                    Icon(icon, color: Colors.black, size:19),
-                    SizedBox(width: 5),
+                    Icon(icon, color: color, size:16),
+                    SizedBox(width: 1),
                     Text(
                       teks,
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 13,
+                      ),
+                    ),
+                  ],
+                );
+  }
+
+    Row StyleHarga(IconData icon, String teks) {
+    return Row(
+                  children: [
+                    Icon(icon, color: Colors.green, size:20),
+                    SizedBox(width: 3),
+                    Text(
+                      teks,
+                      style: TextStyle(
+                        fontSize: 20,
                         fontWeight: FontWeight.bold
                       ),
                     ),
