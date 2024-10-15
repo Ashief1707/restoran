@@ -51,7 +51,7 @@ class MainApp extends StatelessWidget {
               Row(children: [
                 btnContact(Icon(Icons.email), Color.fromARGB(255, 131, 9, 0), "mailto: ${profil['email']}"),
                 btnContact(Icon(Icons.pin_drop), const Color.fromARGB(255, 0, 71, 129), "https:www.google.com/maps/search/?api=1&query=${profil['address']}"),
-                btnContact(FaIcon(FontAwesomeIcons.whatsapp), const Color.fromARGB(255, 0, 163, 5), "https://wa.me/${profil['phone']}" )
+                btnContact(const FaIcon(FontAwesomeIcons.whatsapp), const Color.fromARGB(255, 0, 163, 5), "https://wa.me/${profil['phone']}" )
               ],),
               SizedBox(height: 10),
               teksKotak(Icon(Icons.description), Color(0xFF88AB8E), 'Deskripsi'),

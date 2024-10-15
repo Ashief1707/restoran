@@ -54,7 +54,7 @@ class DetailMenu extends StatelessWidget {
                         fontSize: 21,
                         )
                       ),
-                      ButtonFavorite(),
+                      const ButtonFavorite(),
                    ],
                  ),
               

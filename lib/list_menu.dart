@@ -16,7 +16,7 @@ class Listmenu {
     required this.rate,
     required this.kategori,
     required this.bahan,
-    required this.ulasan, // Menambahkan parameter ulasan
+    required this.ulasan, 
   });
 
   static List<Listmenu> dummyData = [
